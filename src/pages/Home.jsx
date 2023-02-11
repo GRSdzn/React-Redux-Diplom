@@ -19,13 +19,15 @@ const Home = ({ searchValue }) => {
   React.useEffect(() => {
     setIsLoading(true);
 
-    const sortBy = sortType.sortProperty.replace('-', '');
+    const sortBy = sortType.sortProperty.replace('-', '-');
     const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
     const category = categoryId > 0 ? `category=${categoryId}` : '';
     const search = searchValue ? `&search=${searchValue}` : '';
 
+    // `http://127.0.0.1:8000/api-v1/products/?ordering=title${sortBy}&ordering=${sortBy}&${category}&${search}`,
+
     fetch(
-      `http://127.0.0.1:8000/api-v1/products/?ordering=title${sortBy}&ordering=${sortBy}&${category}&${search}`,
+      `http://127.0.0.1:8000/api-v1/products/?ordering=title${sortBy}&ordering=${sortBy}&${category}&order=${order}&${search}`,
     )
       .then((res) => res.json())
       .then((arr) => {
