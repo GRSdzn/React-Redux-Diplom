@@ -6,8 +6,10 @@ import Categories from '../components/Categories';
 import Panel from '../components/Panel';
 import Skeleton from '../components/CartObject/Skeleton';
 import Sort from '../components/Sort';
+import { SearchContext } from '../App';
 
-const Home = ({ searchValue }) => {
+const Home = () => {
+  const { searchValue } = React.useContext(SearchContext);
   const [items, setItems] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const [categoryId, setCategoryId] = React.useState(0);
@@ -38,29 +40,28 @@ const Home = ({ searchValue }) => {
   }, [categoryId, sortType, searchValue]);
 
   const meats = items.map((obj) => <CartObject key={obj.id} {...obj} />)  // Динамический поиск товаров (из бека)
-
   const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />) // Скелет товаров (предпрогрузка)
 
   return (
     <div className="pb-14">
       <div className="w-full h-[100vh] bg-no-repeat bg-cover bg-background">
         <div className=" flex flex-col justify-center items-center">
-          <p className="text-[#fff] text-[60px] font-bold mt-[35vh] lg:text-[20px]">
-            СВЕЖЕЕ <span className="!text-main">МЯСО</span> - ЗАЛОГ <br />ЗДОРОВОГО ЖЕЛУДКА
+          <p className="text-[#fff] text-[60px] text-center font-bold mt-[35vh] lg:text-[20px]">
+            СВЕЖЕЕ <span className="!text-main">МЯСО</span> <br />ЗАЛОГ ЗДОРОВОГО<br /> ЖЕЛУДКА
           </p>
-          <div className="flex flex-col items-center mt-[38vh] sm:mt-[200px] md:mt-[25vh]]">
-            <a href="#" className="text-white font-light text-[18px] duration-300 mb-[1vh]">Подробнее</a>
-            <a href='#'><img src={arrow} alt="arrow-down" className="animate-bounce" /></a>
+          <div className="flex flex-col items-center mt-[15%] sm:mt-[200px] md:mt-[25vh]]">
+            <p className="text-white font-light text-[18px] duration-300 mb-[1vh]">Подробнее</p>
+            <div><img src={arrow} alt="arrow-down" className="animate-bounce" /></div>
           </div>
         </div>
       </div>
 
       <section className="bg-[#272727] py-[8vh] px-[10vh]">
 
-        {/* Каталог товаров title*/}
-        <div className="border-solid border-[2px] h-0 mt-[80px] mb-20 flex justify-center border-[#c9c4af] rounded-[10px] uppercase text-center relative lg:border-none">
+        {/* Каталог товаров Заголовок*/}
+        <div className="relative text-left ">
           <div>
-            <h2 className="text-white m-[-17px] font-bold text-[40px] leading-7 w-96 text-center mb-[-11px] -bottom-2/4 bg-[#272727] lg:w-0 lg:text-[20px]">Каталог</h2>
+            <h2 className="text-secondary font-bold text-[60px] mt-20 mb-12 bg-[#272727]">Каталог</h2>
           </div>
         </div>
 

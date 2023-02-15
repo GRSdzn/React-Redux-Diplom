@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 
 
-function Header({ searchValue, setSearchValue }) {
+function Header() {
+
   return (
     <>
       <div className="bg-[#27272780] z-10 flex flex-row px-[70px] py-[23px] justify-between items-center fixed w-full">
@@ -15,7 +16,7 @@ function Header({ searchValue, setSearchValue }) {
           <li className="text-[#fff] text-[16px] hover:text-main duration-300"><Link to="/">Главная</Link></li>
           <li className="text-[#fff] text-[16px] hover:text-main duration-300"><Link to="/">Товары</Link></li>
           <li className="text-[#fff] text-[16px] hover:text-main duration-300"><Link to="/">О нас</Link></li>
-          <Search searchValue={searchValue} setSearchValue={setSearchValue} />
+          <Search />
         </ul>
 
         <div className="flex flex-row gap-x-[36px]">

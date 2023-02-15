@@ -4,9 +4,10 @@ export const Panel = () => {
   return (
     <>
       <section className="bg-[#272727] px-[10vh] mt-24 ">
-        <div className="border-solid border-[2px] h-0  mb-[150px] flex justify-center border-[#c9c4af] rounded-[10px] uppercase text-center relative">
+        {/* Блоки с плюсами Заголовок*/}
+        <div className="relative text-left ">
           <div>
-            <h2 className="text-white m-[-17px] font-bold text-[40px] leading-7 w-96 text-center mb-[-11px] -bottom-2/4 bg-[#272727] lg:text-[20px]">Гаранитируем</h2>
+            <h2 className="text-secondary font-bold text-[60px] mt-24 mb-12 bg-[#272727]">Гарантируем</h2>
           </div>
         </div>
         <div className="flex bg-[#202020] p-14 lg:p-0 lg:bg-transparent justify-between lg:flex-col lg:items-center flex-wrap  mb-[25vh]">

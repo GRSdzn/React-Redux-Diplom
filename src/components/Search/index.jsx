@@ -1,6 +1,8 @@
 import React from 'react'
+import { SearchContext } from './../../App';
 
-const Search = ({ searchValue, setSearchValue }) => {
+const Search = () => {
+  const { searchValue, setSearchValue } = React.useContext(SearchContext);
   return (
     <div className="flex">
       <form className="relative">
