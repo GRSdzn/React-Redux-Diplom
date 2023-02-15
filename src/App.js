@@ -9,12 +9,10 @@ import CartPage from './pages/CartPage';
 import ShopCart from './pages/ShopCart';
 
 export const SearchContext = React.createContext();
-console.log(SearchContext);
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('');
 
-  console.log(searchValue, 'INPUT CHANGED')
   return (
     <div className="bg-[#272727]">
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
