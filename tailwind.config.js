@@ -9,6 +9,7 @@ module.exports = {
       ]
     },
     colors: {
+      pageBackground: '#272727',
       main: '#B91C1C',
       mainLight: '#EF4444',
       secondary: '#707070',

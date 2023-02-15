@@ -14,7 +14,7 @@ function App() {
   const [searchValue, setSearchValue] = React.useState('');
 
   return (
-    <div className="bg-[#272727]">
+    <div className="bg-pageBackground">
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
         <Header />
           <div className="">
